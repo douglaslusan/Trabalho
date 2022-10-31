@@ -5,13 +5,41 @@ namespace Trabalho.Entities
 {
     internal class Funcionario
     {
-        public string Name { get; set; }
-        public Cliente CodClient { get; set; }
+        
+        public double Salario { get; set; }
+        public int CodPessoal { get; set; }
+        public string Nome { get; set; }
 
-        public Funcionario(string name, Cliente codClient)
+        List<Funcionario> funcionarios = new List<Funcionario>();
+
+        public Funcionario()
         {
-            Name = name;
-            CodClient = codClient;
         }
+
+        public Funcionario(double salario, int codPessoa, string nome) 
+        {
+            Salario = salario;
+            CodPessoal = codPessoa;
+            Nome = nome;
+        }
+
+        public void CadastrarFunc(double salario, int codPessoa, string nome)
+        {
+            funcionarios.Add(new Funcionario(salario, codPessoa, nome));
+        }
+
+        public void BuscarFunc()
+        {
+            foreach (var item in funcionarios)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Cod: {CodPessoal}\nNome: {Nome}\nSalario: {Salario}\n";
+        }
+
     }
 }

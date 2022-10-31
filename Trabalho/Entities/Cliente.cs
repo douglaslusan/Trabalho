@@ -6,8 +6,8 @@ namespace Trabalho.Entities
 {
     internal class Cliente
     {
-        public int CodPerson { get; set; }
-        public string NameClient { get; set; }
+        public int CodPessoal { get; set; }
+        public string Nome { get; set; }
         
         List<Cliente> clientes = new List<Cliente>();
 
@@ -15,10 +15,10 @@ namespace Trabalho.Entities
         {
         }
 
-        public Cliente(int codPessoa, string nomeCliente)
+        public Cliente(int codPessoa, string nome)
         {
-            CodPerson = codPessoa;
-            NameClient = nomeCliente;
+            CodPessoal = codPessoa;
+            Nome = nome;
         }
 
 
@@ -39,7 +39,7 @@ namespace Trabalho.Entities
 
         public override string ToString()
         {
-            return $"Codigo {CodPerson}\nNome {NameClient}";
+            return $"Codigo {CodPessoal}\nNome {Nome}\n";
         }
 
     }

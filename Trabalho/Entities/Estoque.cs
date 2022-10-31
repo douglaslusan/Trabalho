@@ -6,12 +6,27 @@ using System.Threading.Tasks;
 
 namespace Trabalho.Entities
 {
-    internal class Estoque
+    class Estoque
     {
-        public int CodProduct { get; set; }
-        public int QtdProduct { get; set; }
-        public string NameProduct { get; set; }
-        public double PriceProduct { get; set; }
-                
+        
+
+        List<Produto> listaEstoque = new List<Produto>();
+
+        
+        public void CadastrarEstoque(Produto produto)
+        {
+            listaEstoque.Add(new Produto(produto.CodProduct, produto.QtdProduct, produto.NameProduct, produto.PriceProduct));
+        }
+
+        public void BuscarEstoque()
+        {
+            foreach (var item in listaEstoque)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        
+
     }
 }
