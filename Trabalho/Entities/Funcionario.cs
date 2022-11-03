@@ -7,7 +7,7 @@ namespace Trabalho.Entities
     {
         
         public double Salario { get; set; }
-        public int CodPessoal { get; set; }
+        Cliente CodPessoal { get; set; }
         public string Nome { get; set; }
 
         List<Funcionario> funcionarios = new List<Funcionario>();
@@ -16,14 +16,14 @@ namespace Trabalho.Entities
         {
         }
 
-        public Funcionario(double salario, int codPessoa, string nome) 
+        public Funcionario(double salario, Cliente codPessoa, string nome) 
         {
             Salario = salario;
             CodPessoal = codPessoa;
             Nome = nome;
         }
 
-        public void CadastrarFunc(double salario, int codPessoa, string nome)
+        public void CadastrarFunc(double salario, Cliente codPessoa, string nome)
         {
             funcionarios.Add(new Funcionario(salario, codPessoa, nome));
         }
